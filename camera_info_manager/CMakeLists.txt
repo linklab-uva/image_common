@@ -2,9 +2,15 @@ cmake_minimum_required(VERSION 3.5)
 
 project(camera_info_manager)
 
-# Default to C++14
+# Default to C++17 on Windows, C++14 otherwise
 if(NOT CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 14)
+
+  if(MSVC)
+    set(CMAKE_CXX_STANDARD 17)
+  else()
+    set(CMAKE_CXX_STANDARD 14)
+  endif()
+  
 endif()
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")

@@ -37,12 +37,12 @@
 
 #if defined(_MSC_VER)
 # if _MSC_VER >= 1900
-#  include <experimental/filesystem>
+#  include <filesystem>
 namespace camera_info_manager
 {
 namespace impl
 {
-namespace fs = std::experimental::filesystem;
+namespace fs = std::filesystem;
 }  // namespace impl
 }  // namespace camera_info_manager
 
