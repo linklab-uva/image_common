@@ -36,18 +36,18 @@
 #define FILESYSTEM_HELPER_HPP_
 
 #if defined(_MSC_VER)
-# if _MSC_VER >= 1900
-#  include <filesystem>
-namespace camera_info_manager
-{
-namespace impl
-{
-namespace fs = std::filesystem;
-}  // namespace impl
-}  // namespace camera_info_manager
+  # if _MSC_VER >= 1923
+    #  include <filesystem>
+    namespace camera_info_manager
+    {
+    namespace impl
+    {
+    namespace fs = std::filesystem;
+    }  // namespace impl
+    }  // namespace camera_info_manager
 
-#  define CAMERA_INFO_MANAGER__IMPL__FILESYSYEM_HELPER__HAS_STD_FILESYSTEM
-# endif
+    #  define CAMERA_INFO_MANAGER__IMPL__FILESYSYEM_HELPER__HAS_STD_FILESYSTEM
+  # endif
 
 #elif defined(__has_include)
 // *INDENT-OFF*
